@@ -35,11 +35,13 @@ app.use(cors({
 
         const allowedOrigins = [
             "http://localhost:5173",
-            "http://localhost:3000"
-        ];
+            "http://localhost:3000",
+            "https://kindlecrm14aprghj.vercel.app",
+            process.env.CORS_ORIGIN
+        ].filter(Boolean);
 
         // DYNAMIC ALLOW: If origin includes "localhost", allow it (Fixes 5174, 5175, etc.)
-        if (origin.includes('localhost') || allowedOrigins.indexOf(origin) !== -1) {
+        if (origin.includes('localhost') || allowedOrigins.indexOf(origin) !== -1 || allowedOrigins.includes(origin)) {
             return callback(null, true);
         }
 

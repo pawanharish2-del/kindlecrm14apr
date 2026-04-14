@@ -15,7 +15,7 @@ connectDB();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: ["http://localhost:5173", "http://localhost:3000"],
+        origin: ["http://localhost:5173", "http://localhost:3000", "https://kindlecrm14aprghj.vercel.app", process.env.CORS_ORIGIN].filter(Boolean),
         methods: ["GET", "POST"]
     }
 });
