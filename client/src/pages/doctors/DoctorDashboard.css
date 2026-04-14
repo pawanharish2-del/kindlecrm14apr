@@ -1,0 +1,317 @@
+/* ============================================================
+   Doctor Dashboard — Ultra Premium Glass Theme
+   ============================================================ */
+:root {
+    --doc-primary: #3b82f6;
+    --doc-secondary: #0ea5e9;
+    --doc-accent: #6366f1;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --radius-xl: 24px;
+}
+
+.doctor-dashboard-container {
+    min-height: 100vh;
+    padding: 32px;
+    background: radial-gradient(circle at top right, #f0f9ff, #e0f2fe, #f1f5f9);
+    font-family: 'Outfit', 'Inter', sans-serif;
+    color: var(--text-dark);
+}
+
+/* Header */
+.doctor-header {
+    margin-bottom: 40px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 24px 32px;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--doc-primary), var(--doc-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 6px 0;
+}
+
+.subtitle {
+    color: var(--text-light);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Stats */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 28px;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.15);
+}
+
+.stat-card h3 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.03em;
+}
+
+.stat-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.stat-card.blue h3 {
+    color: #3b82f6;
+}
+
+.stat-card.orange h3 {
+    color: #f59e0b;
+}
+
+.stat-card.green h3 {
+    color: #10b981;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 4px;
+}
+
+.stat-card.blue::before {
+    background: #3b82f6;
+}
+
+.stat-card.orange::before {
+    background: #f59e0b;
+}
+
+.stat-card.green::before {
+    background: #10b981;
+}
+
+/* Appointments Table */
+.appointments-section {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    padding: 24px;
+    overflow: hidden;
+}
+
+.appointments-section h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin: 0 0 24px 0;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.doctor-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.doctor-table th {
+    text-align: left;
+    padding: 16px;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.doctor-table tbody tr {
+    background: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.doctor-table tbody tr:hover {
+    transform: scale(1.005);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+    z-index: 10;
+}
+
+.doctor-table td {
+    padding: 16px;
+    border: none;
+    vertical-align: middle;
+}
+
+.doctor-table td:first-child {
+    border-radius: 12px 0 0 12px;
+}
+
+.doctor-table td:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+.time-cell .time {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    display: block;
+}
+
+.time-cell .date {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.patient-cell strong {
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    display: inline-block;
+}
+
+.status-badge.confirmed {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.status-badge.pending {
+    background: #fffbeb;
+    color: #d97706;
+}
+
+.status-badge.completed {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.status-badge.cancelled {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+/* Buttons */
+.btn-view {
+    background: linear-gradient(135deg, var(--doc-primary), var(--doc-accent));
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    transition: all 0.3s;
+}
+
+.btn-view:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(59, 130, 246, 0.4);
+}
+
+/* States */
+.empty-message,
+.loading-message {
+    text-align: center;
+    padding: 60px 0;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.empty-message::before {
+    content: '📅';
+    display: block;
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .doctor-dashboard-container {
+        padding: 20px;
+    }
+
+    .doctor-header {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .doctor-table,
+    .doctor-table tbody,
+    .doctor-table tr,
+    .doctor-table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .doctor-table thead {
+        display: none;
+    }
+
+    .doctor-table tbody tr {
+        margin-bottom: 16px;
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .doctor-table td {
+        padding: 8px 0;
+        text-align: left;
+    }
+
+    .doctor-table td:first-child,
+    .doctor-table td:last-child {
+        border-radius: 0;
+    }
+}
